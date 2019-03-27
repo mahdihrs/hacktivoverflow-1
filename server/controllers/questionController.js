@@ -65,7 +65,7 @@ class Controller {
         })
         .then(newQuestion => {
             res
-                .status(200)
+                .status(201)
                 .json({
                     msg: 'Question has been successfully stored'
                 })                
@@ -237,7 +237,6 @@ class Controller {
     }
 
     static getUsersQuestion(req, res) {
-        console.log(req.decoded.id)
         Question
             .find({
                 user: req.decoded.id
