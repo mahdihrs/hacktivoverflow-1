@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -6,7 +7,8 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/hacktiv-overflow', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/hacktiv-overflow', { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://mahdihrs:${process.env.PASS_ATLAS}@projects-a1wq0.gcp.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true })
 
 const app = express();
 
